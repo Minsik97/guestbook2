@@ -77,7 +77,7 @@ public class GbController extends HttpServlet {
 			if(ex ==1 ) {
 				response.sendRedirect("/guestbook2/gbc?action=addList");
 			} else if (ex == 0) {
-				RequestDispatcher rd = request.getRequestDispatcher("./WEB-INF/deleteForm.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("./WEB-INF/passwordcheck.jsp");
 				rd.forward(request, response);
 			}
 			 
