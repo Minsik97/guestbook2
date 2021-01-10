@@ -16,9 +16,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+		<h1>등록해 주세요</h1>
+		
 		<form action="/guestbook2/gbc" method="post">
 		<table border="3" >
-		
 			<tr>													<!-- 값이 없어도 value는 써야함 -->
 				<td bgcolor="EEEEEE" align="center" >이름</td>
 				<td ><input type="text" name ="name" value=""></td>
@@ -40,8 +41,7 @@
 		<!-- action -->
 		<input type="hidden" name="action" value="add"> 
 	</form>
-	
-	
+	<h2>리스트</h2>
 	<!-- 삭제 코드 -->
 		<% for (int i = 0; i<guestbookList.size(); i++) { %>
 		<table border="2">
