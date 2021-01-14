@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import = "java.util.List" %>
-<%@ page import = "com.javaex.vo.GuestbookVo" %>
-
-
-<%
-		List <GuestbookVo> guestbookList = (List<GuestbookVo>)request.getAttribute("gbList");
-%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
 
@@ -43,24 +37,24 @@
 	</form>
 	<h2>리스트</h2>
 	<!-- 삭제 코드 -->
-		<% for (int i = 0; i<guestbookList.size(); i++) { %>
+		<c:forEach items="${gbList}" var="gbL">
 		<table border="2">
 			<tr>
-				<td><%=guestbookList.get(i).getNo() %></td>
-				<td><%=guestbookList.get(i).getName() %></td>
-				<td><%=guestbookList.get(i).getRegDate() %></td>
+				<td>${gbL.no }</td>
+				<td>${gbl.name }</td>
+				<td>${gbl.regdate }</td>
 				
 			</tr>
 			<tr>
-				<td colspan="4"><%=guestbookList.get(i).getContent() %></td>
+				<td colspan="4">${gbL.content }</td>
 			</tr>
 			<tr>
-				<td><a href="/guestbook2/gbc?action=deleteForm&no=<%=guestbookList.get(i).getNo()%>">삭제</a></td>
+				<td><a href="/guestbook2/gbc?action=deleteForm&no=${gbL.no }">삭제</a></td>
 			</tr>
 		</table>
 		<br>
 	
-	<%}%>
+		</c:forEach>
 		
 		
 		
